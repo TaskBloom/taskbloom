@@ -1,0 +1,15 @@
+{
+  "network": "arbitrum-one",
+  "chainId": 42161,
+  "tokenName": "TaskBloom Governance Token",
+  "tokenSymbol": "TBLOOM",
+  "tokenAddress": "0x9c66cf6AE5941e87e757d7C3422e2D68FE3b85E4",
+  "deployer": "0x79262C87ab9692860401002cB80C6ADbbd5D6A33",
+  "txHash": "0x8ff8296af9fc5f1158c3900d1f897cd217c6a0fac0dead1f7e676f1e9d60ba61",
+  "blockNumber": 445129467,
+  "gasUsed": 2026070,
+  "effectiveGasPriceWei": "20000000",
+  "maxSupply": "10000000",
+  "decimals": 18,
+  "timestampUtc": "2026-03-24T10:49:00Z"
+}
