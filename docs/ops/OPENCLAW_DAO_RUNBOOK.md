@@ -64,9 +64,24 @@ Example:
 ## Governance proposal workflow
 
 1. Create proposal in TokenVoting plugin with metadata + actions.
-2. Vote yes.
-3. Wait until end date unless early execution is enabled and threshold is met.
-4. Execute proposal.
+2. Use a title that explicitly states the concrete onchain change.
+3. Vote yes.
+4. Wait until end date unless early execution is enabled and threshold is met.
+5. Execute proposal.
+
+### Proposal title standard (mandatory)
+
+Titles must clearly reflect what is being voted on.
+
+Format:
+`<AREA>-<ID>: <Exact action> [key parameter/value]`
+
+Examples:
+- `GOV-SETTINGS-2: Set votingMode to EarlyExecution (1)`
+- `TREASURY-3: Transfer 1,000 TBLOOM to contributor wallet`
+- `FEE-1: Set protocol fee to 5%`
+
+Do not use vague titles such as "Update settings" or "Test proposal" unless the action is strictly a test.
 
 Important:
 - Proposal creation requires `minProposerVotingPower` and delegated votes.

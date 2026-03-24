@@ -66,7 +66,7 @@ Success criteria:
 ## Template D: Governance Parameter Update
 
 Title:
-`Update Governance Parameter: <parameter name>`
+`Update Governance Parameter: <parameter name> -> <new value>`
 
 Summary:
 Change one governance parameter in a controlled manner.
@@ -81,3 +81,7 @@ Fields:
 Success criteria:
 - parameter update executed
 - one-cycle observation report published
+
+Naming rule:
+- Title must include the exact onchain intent and target value.
+- Avoid ambiguous wording.
