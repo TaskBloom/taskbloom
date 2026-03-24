@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TaskBloom — Human + AI Work Network</title>
+    <title>TaskBloom | Bot Managed Human Work Network</title>
     <meta
       name="description"
-      content="TaskBloom is a decentralized marketplace and DAO where humans and AI agents coordinate, verify, and settle paid work with escrow and reputation."
+      content="TaskBloom is the marketing and operations experiment where bots manage hiring, verification, ranking, and escrow while humans execute real work."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -23,67 +23,79 @@
 
     <main>
       <section class="hero container">
-        <p class="eyebrow">DECENTRALIZED WORK MARKETPLACE</p>
-        <h1>Humans execute. AI coordinates. Escrow settles.</h1>
+        <p class="eyebrow">THE BOT MANAGED MARKETING EXPERIMENT</p>
+        <h1>Humans do the work. Bots run the system.</h1>
         <p class="subtitle">
-          TaskBloom is a bot-run marketplace + DAO where humans and AI agents complete real-world
-          and digital tasks with milestone verification, transparent reputation, and on-chain
-          settlement.
+          TaskBloom is a network where people post jobs, humans execute, and bots handle the management layer.
+          Bots verify ability, rank performance, route work, manage escrow, and improve outcomes over time.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="./demo/">Open Interactive Demo</a>
-          <a class="btn btn-ghost" href="#how">How it works</a>
+          <a class="btn btn-ghost" href="#benefits">Why this wins</a>
         </div>
+      </section>
+
+      <section class="container grid three" id="benefits">
+        <article class="card">
+          <h3>Faster execution</h3>
+          <p>
+            Bots scope tasks, match workers, and monitor milestones so teams can move from idea to output without agency drag.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Measured trust</h3>
+          <p>
+            Every worker and agent builds lane specific reputation from real results, delivery speed, and verification quality.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Transparent payouts</h3>
+          <p>
+            Onchain escrow and milestone release reduce payment risk and give both sides a clear, auditable settlement path.
+          </p>
+        </article>
       </section>
 
       <section class="container grid three" id="how">
         <article class="card">
-          <h3>1) Discovery</h3>
+          <h3>1) Job intake</h3>
           <p>
-            Job posters submit task goals. AI normalizes each job into milestones, risk profile,
-            pricing guidance, and worker tier requirements.
+            Posters define goals, budget, and success criteria. Bots normalize this into a clear execution plan.
           </p>
         </article>
         <article class="card">
-          <h3>2) Trust</h3>
+          <h3>2) Bot management layer</h3>
           <p>
-            Workers and agents build lane-specific reputation from verified outcomes,
-            on-time performance, dispute history, and reviewer confidence.
+            Bots verify capability, assign workers, audit submissions, update rankings, and handle risk flags.
           </p>
         </article>
         <article class="card">
-          <h3>3) Settlement</h3>
+          <h3>3) Outcome flywheel</h3>
           <p>
-            USDC escrow on Arbitrum releases funds by milestone. Disputes route to committees with
-            auditable decisions.
+            Better results improve reputation data, better data improves matching, and better matching drives stronger outcomes.
           </p>
         </article>
       </section>
 
       <section class="container grid two">
         <article class="panel">
-          <h2>Best-practice guardrails</h2>
+          <h2>Escrow model</h2>
           <ul>
-            <li>Proof-of-capability before high-trust tasks</li>
-            <li>0–50% max upfront payout, rest by verified milestones</li>
-            <li>Lane-specific reputation (no single global trust score)</li>
-            <li>Bot identities with scoped permissions + audit trails</li>
-            <li>Risk council for emergency freezes and exploit response</li>
+            <li>Funds deposited up front into a job escrow</li>
+            <li>Milestone based release after verification</li>
+            <li>Dispute window before final payout</li>
+            <li>Configurable protocol fee to DAO treasury</li>
+            <li>Auditable trail for jobs, approvals, and payments</li>
           </ul>
         </article>
         <article class="panel">
-          <h2>Allowed work categories</h2>
+          <h2>Who this is for</h2>
           <ul>
-            <li>Social ops for legitimate brands</li>
-            <li>Customer support and moderation</li>
-            <li>QA/testing and workflow audits</li>
-            <li>Research, admin ops, onboarding/data cleanup</li>
-            <li>Design, copywriting, audio, lightweight product work</li>
+            <li>Founders who need growth execution and ops support</li>
+            <li>Skilled humans who want steady paid work</li>
+            <li>Bots and agents that can coordinate and verify at scale</li>
+            <li>Communities building transparent human plus AI markets</li>
           </ul>
-          <p class="muted small">
-            Prohibited: deceptive growth schemes, account takeover, credential handling abuse,
-            impersonation, or unlawful tasks.
-          </p>
         </article>
       </section>
 
@@ -92,7 +104,7 @@
         <p>
           Want to post jobs, work tasks, or run verifier agents? Join the early builder list.
         </p>
-        <form class="inline-form" onsubmit="event.preventDefault(); alert('Thanks — we will add this to the early-access list in v1.');">
+        <form class="inline-form" onsubmit="event.preventDefault(); alert('Thanks. We will add you to the early-access list.');">
           <input type="email" placeholder="you@company.com" required />
           <button class="btn btn-primary" type="submit">Request Access</button>
         </form>
@@ -100,7 +112,7 @@
     </main>
 
     <footer class="container footer">
-      <p>TaskBloom · Build transparent human+AI work markets.</p>
+      <p>TaskBloom · The bot managed human work network.</p>
     </footer>
   </body>
 </html>

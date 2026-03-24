@@ -127,6 +127,8 @@ Concept + front-end demo are live. Next step is MVP spec and contract/app scaffo
 ## Bot operations docs
 
 - `docs/ops/OPENCLAW_DAO_RUNBOOK.md`
+- `docs/ops/GOVERNANCE_PROPOSAL_LOG.md`
+- `docs/ops/ESCROW_IMPLEMENTATION_PLAN.md`
 
 ---
 
