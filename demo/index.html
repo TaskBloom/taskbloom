@@ -4,37 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TaskBloom Demo | Job Board</title>
-    <link rel="stylesheet" href="../styles.css" />
-    <style>
-      .demo-wrap { width: min(1120px, 92%); margin: 1.5rem auto 3rem; }
-      .topline { display: flex; justify-content: space-between; gap: 1rem; align-items: center; flex-wrap: wrap; }
-      .muted { color: var(--muted); }
-      .jobs { display: grid; gap: .75rem; margin-top: 1rem; }
-      .job { border: 1px solid var(--stroke); background: rgba(255,255,255,.02); border-radius: 12px; padding: .85rem; cursor: pointer; }
-      .job:hover { border-color: #3b517a; }
-      .job h3 { margin: 0 0 .35rem; font-size: 1rem; }
-      .job-meta { font-size: .9rem; color: var(--muted); display: flex; gap: .75rem; flex-wrap: wrap; }
-      .drawer {
-        position: fixed; top: 0; left: -560px; width: min(560px, 95vw); height: 100vh;
-        background: #0c1424; border-right: 1px solid #2a3d63; z-index: 12; padding: 1rem; overflow: auto;
-        transition: left .25s ease;
-      }
-      .drawer.open { left: 0; }
-      .drawer h2 { margin-top: .25rem; }
-      .overlay {
-        position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 11; display: none;
-      }
-      .overlay.open { display: block; }
-      .grid2 { display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 1rem; margin-top: 1rem; }
-      input, textarea, select {
-        width: 100%; background: #0d1526; color: var(--text);
-        border: 1px solid #2a3d63; border-radius: 10px; padding: .65rem .75rem;
-      }
-      textarea { min-height: 90px; resize: vertical; }
-      .stack { display: grid; gap: .6rem; }
-      .tag { font-size: .78rem; border: 1px solid #2b3d62; padding: .15rem .45rem; border-radius: 999px; color: #d6e0f5; }
-      .row { display: flex; gap: .5rem; flex-wrap: wrap; }
-    </style>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header class="topbar">
@@ -51,7 +21,7 @@
       <p class="eyebrow">DEMO JOB BOARD</p>
       <div class="topline">
         <div>
-          <h1 style="margin:.2rem 0">Bot-run marketplace examples</h1>
+          <h1>Bot-run marketplace examples</h1>
           <p class="muted">These are example jobs. Click any job to open the full brief and settlement logic.</p>
         </div>
       </div>
@@ -97,89 +67,6 @@
       <p class="muted">Fixed-price with milestone escrow. First milestone is deposited at kickoff. Remaining milestones release after verified delivery. Partial delivery allows partial settlement.</p>
     </aside>
 
-    <script>
-      const sampleJobs = [
-        {
-          title: 'Launch social growth for new AI tool',
-          budget: '$2,500 fixed',
-          duration: '14 days',
-          category: 'Social Growth',
-          summary: 'Grow a new X account and produce daily engagement loops.',
-          scope: 'Client provides brand voice and offers. Operators produce posts, engage target audience, and report daily metrics.',
-          milestones: ['M1: Setup + content map ($500)', 'M2: 7-day growth sprint ($1,000)', 'M3: final report + handoff ($1,000)']
-        },
-        {
-          title: 'Run paid ads + creative testing for SaaS',
-          budget: '$4,000 fixed',
-          duration: '21 days',
-          category: 'Ads Management',
-          summary: 'Build ad sets, test creatives, and optimize CAC directionally.',
-          scope: 'Bot routes creative and ad ops specialists. Team delivers weekly optimization report and clear next actions.',
-          milestones: ['M1: campaign architecture ($1,000)', 'M2: creative test cycle ($1,500)', 'M3: optimization + report ($1,500)']
-        },
-        {
-          title: 'Sales ops lead qualification sprint',
-          budget: '$1,800 fixed',
-          duration: '10 days',
-          category: 'Sales Ops',
-          summary: 'Qualify inbound leads and enrich CRM records for outbound readiness.',
-          scope: 'Humans validate lead quality and enrichment. Bots monitor SLA and quality checks before final delivery.',
-          milestones: ['M1: schema + workflow setup ($400)', 'M2: qualification run ($900)', 'M3: QA pass + export ($500)']
-        }
-      ];
-
-      const jobsEl = document.getElementById('jobs');
-      const drawer = document.getElementById('drawer');
-      const overlay = document.getElementById('overlay');
-
-      function openDrawer(job) {
-        document.getElementById('dTitle').textContent = job.title;
-        document.getElementById('dSummary').textContent = `${job.budget} • ${job.duration} • ${job.category}`;
-        document.getElementById('dScope').textContent = job.scope;
-        document.getElementById('dTags').innerHTML = `<span class='tag'>${job.category}</span><span class='tag'>Fixed price</span><span class='tag'>Milestone escrow</span>`;
-        document.getElementById('dMilestones').innerHTML = job.milestones.map(m => `<li>${m}</li>`).join('');
-        drawer.classList.add('open');
-        overlay.classList.add('open');
-      }
-
-      function closeDrawer() {
-        drawer.classList.remove('open');
-        overlay.classList.remove('open');
-      }
-
-      sampleJobs.forEach(job => {
-        const el = document.createElement('article');
-        el.className = 'job';
-        el.innerHTML = `<h3>${job.title}</h3><p class='muted' style='margin:.25rem 0 .45rem'>${job.summary}</p><div class='job-meta'><span>${job.budget}</span><span>${job.duration}</span><span>${job.category}</span><span>Click for full brief</span></div>`;
-        el.addEventListener('click', () => openDrawer(job));
-        jobsEl.appendChild(el);
-      });
-
-      document.getElementById('closeDrawer').addEventListener('click', closeDrawer);
-      overlay.addEventListener('click', closeDrawer);
-
-      document.getElementById('simulatePost').addEventListener('click', () => {
-        const t = document.getElementById('pTitle').value.trim() || 'Untitled job';
-        const d = document.getElementById('pDesc').value.trim() || 'No description provided.';
-        const b = Number(document.getElementById('pBudget').value || 0);
-        const days = Number(document.getElementById('pDays').value || 0);
-        const cat = document.getElementById('pCategory').value;
-        const first = b ? Math.round(b * 0.4) : 'TBD';
-
-        document.getElementById('draftOut').textContent = [
-          `Title: ${t}`,
-          `Category: ${cat}`,
-          `Budget: ${b || 'TBD'} USD (fixed)` ,
-          `Timeline: ${days || 'TBD'} days`,
-          '',
-          'Draft accepted by bot intake layer.',
-          `First milestone deposit required: ${first} USD equivalent into escrow.`,
-          '',
-          `Objective summary: ${d}`,
-          '',
-          'Next step: bot matching engine routes to suitable human operators.'
-        ].join('\n');
-      });
-    </script>
+    <script src="./app.js"></script>
   </body>
 </html>

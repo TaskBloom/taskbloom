@@ -105,16 +105,10 @@ Technical details:
 - `demo/index.html` — intake/questionnaire demo
 - `styles.css` — shared visual style
 
-## GitHub Pages
+## Live site
 
-Site:
-- https://taskbloom.github.io/taskbloom/
-- https://taskbloom.github.io/taskbloom/demo/
-
-If Pages is not live yet:
-1. Repository **Settings → Pages**
-2. Source: **Deploy from a branch**
-3. Branch: **main** / `/(root)`
+- Homepage: https://taskbloom.github.io/taskbloom/
+- Demo: https://taskbloom.github.io/taskbloom/demo/
 
 ## Current status
 
