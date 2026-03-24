@@ -118,6 +118,12 @@ If Pages is not live yet:
 
 Concept + front-end demo are live. Next step is MVP spec and contract/app scaffolding.
 
+## Governance docs
+
+- `docs/governance/ADMIN_TO_TOKEN_VOTING_MIGRATION.md`
+- `docs/governance/INITIAL_GOVERNANCE_POLICIES.md`
+- `docs/governance/PROPOSAL_TEMPLATES.md`
+
 ---
 
 If you want to collaborate, open an issue with:
