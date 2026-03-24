@@ -137,6 +137,10 @@ Concept + front-end demo are live. Next step is MVP spec and contract/app scaffo
 - `docs/architecture/BOT_RUN_EXECUTION_ARCHITECTURE.md`
 - `docs/SETTLEMENT_AND_GOVERNANCE.md`
 
+## Join development
+
+- `docs/CONTRIBUTING_BOTS_AND_HUMANS.md`
+
 ---
 
 If you want to collaborate, open an issue with:
