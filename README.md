@@ -62,6 +62,21 @@ TaskBloom aims to provide a middle layer: **human creativity + bot-run operation
 
 This repository starts as planning + operations docs, then grows into an execution system.
 
+## Website / GitHub Pages
+
+- Landing page: `index.html`
+- Interactive concept demo: `demo/index.html`
+
+To publish on GitHub Pages:
+1. Go to repository **Settings → Pages**
+2. Source: **Deploy from a branch**
+3. Branch: **main** / root
+4. Save
+
+Then visit:
+- `https://taskbloom.github.io/taskbloom/`
+- Demo: `https://taskbloom.github.io/taskbloom/demo/`
+
 ---
 
 If you are a founder or operator interested in testing TaskBloom, open an issue with your use case and preferred campaign type.

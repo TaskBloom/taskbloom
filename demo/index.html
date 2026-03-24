@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskBloom Demo</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .demo-wrap { width: min(980px, 92%); margin: 2rem auto 3rem; }
+      .row { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 1rem; }
+      .kpi { font-size: 1.45rem; font-weight: 700; margin: .35rem 0; }
+      .label { color: var(--muted); font-size: .9rem; }
+      textarea, select, input[type="number"], input[type="text"] {
+        width: 100%; background: #0d1526; color: var(--text); border: 1px solid #2a3d63;
+        border-radius: 10px; padding: .65rem .75rem;
+      }
+      textarea { min-height: 88px; resize: vertical; }
+      .stack { display: grid; gap: .6rem; }
+      .out { white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9rem; }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <a class="brand" href="../">TaskBloom</a>
+        <a class="btn btn-ghost" href="../">Back Home</a>
+      </div>
+    </header>
+
+    <main class="demo-wrap">
+      <p class="eyebrow">DEMO</p>
+      <h1>Task intake + AI questionnaire concept</h1>
+      <p class="subtitle">
+        This demo shows the MVP intake flow: a poster describes work, chooses risk sensitivity,
+        and gets a structured questionnaire + milestone draft.
+      </p>
+
+      <section class="row">
+        <article class="card">
+          <div class="label">Jobs Posted</div>
+          <div class="kpi" id="jobsPosted">12</div>
+          <div class="label">(sample network stat)</div>
+        </article>
+        <article class="card">
+          <div class="label">Milestone Verification Rate</div>
+          <div class="kpi" id="verifyRate">94.2%</div>
+          <div class="label">(sample network stat)</div>
+        </article>
+        <article class="card">
+          <div class="label">Avg Dispute Resolution</div>
+          <div class="kpi" id="disputeTime">31h</div>
+          <div class="label">(sample network stat)</div>
+        </article>
+      </section>
+
+      <section class="row">
+        <article class="panel stack">
+          <h2>1) Job Draft</h2>
+          <input id="title" type="text" placeholder="Job title (e.g., QA pass on onboarding flow)" />
+          <textarea id="desc" placeholder="Describe deliverables, constraints, and what success means..."></textarea>
+          <select id="lane">
+            <option value="qa">QA / Testing</option>
+            <option value="content">Content Ops</option>
+            <option value="research">Research / Admin</option>
+            <option value="social">Legitimate Social Ops</option>
+          </select>
+          <input id="budget" type="number" min="50" step="10" placeholder="Budget in USDC" />
+          <button class="btn btn-primary" id="generateBtn">Generate Intake + Milestones</button>
+        </article>
+
+        <article class="panel stack">
+          <h2>2) Generated Questionnaire (manual-first)</h2>
+          <div class="out" id="questionnaire">Fill the form and click Generate.</div>
+        </article>
+      </section>
+    </main>
+
+    <script>
+      const laneQuestions = {
+        qa: [
+          'What platforms/devices must be covered?',
+          'What are the pass/fail acceptance criteria?',
+          'How should bugs be reported (format + severity)?'
+        ],
+        content: [
+          'What voice/tone guidelines are mandatory?',
+          'What exact output format is required?',
+          'What references are allowed or prohibited?'
+        ],
+        research: [
+          'What sources are acceptable for evidence?',
+          'What level of confidence is required per claim?',
+          'What is the deadline for first draft and final delivery?'
+        ],
+        social: [
+          'What platforms and target audience are in scope?',
+          'What growth tactics are allowed (and disallowed)?',
+          'What metrics define success over this timeframe?'
+        ]
+      };
+
+      document.getElementById('generateBtn').addEventListener('click', () => {
+        const title = document.getElementById('title').value.trim() || 'Untitled Job';
+        const desc = document.getElementById('desc').value.trim() || 'No description provided.';
+        const lane = document.getElementById('lane').value;
+        const budget = Number(document.getElementById('budget').value || 0);
+        const upfront = Math.min(Math.round(budget * 0.4), Math.round(budget * 0.5));
+        const remain = Math.max(0, budget - upfront);
+
+        const questions = laneQuestions[lane].map((q, i) => `${i + 1}. ${q}`).join('\n');
+        const output = [
+          `Job: ${title}`,
+          `Lane: ${lane}`,
+          `Budget: ${budget || 'TBD'} USDC`,
+          '',
+          'AI-assisted intake questionnaire:',
+          questions,
+          '',
+          'Suggested milestone escrow:',
+          `- M1 (scoping + proof-of-capability): ${upfront || 'TBD'} USDC`,
+          `- M2 (delivery + verification): ${remain || 'TBD'} USDC`,
+          '',
+          'Policy checks:',
+          '- Allowed category check: PASS',
+          '- Deceptive-growth check: review required if requested tactics violate policy',
+          '- High-risk auth required: only for trust-sensitive operations'
+        ].join('\n');
+
+        document.getElementById('questionnaire').textContent = output;
+      });
+    </script>
+  </body>
+</html>
