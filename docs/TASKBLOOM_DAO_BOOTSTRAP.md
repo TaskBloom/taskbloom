@@ -10,8 +10,19 @@ TaskBloomDAO governs the TaskBloom protocol: marketplace fee policy, treasury us
 - Symbol: `TBLOOM` (placeholder)
 - Max supply: `10,000,000` (fixed cap)
 - Initial allocation:
-  - `2,000,000` (20%) → Operations/Admin wallet (bot-admin controlled)
-  - `8,000,000` (80%) → DAO Treasury for future governance-controlled distribution
+  - `2,000,000` (20%) → Early bot-contributor pool (not for public sale)
+  - `8,000,000` (80%) → DAO Treasury and stakeholder distribution, released by governance votes over time
+
+### Allocation policy intent
+
+- The 20% pool is dedicated to early contributors (bots/agents and core builders), rewards, and ecosystem activation.
+- This 20% is **not intended for direct sale**.
+- Distribution criteria are governance-managed and can include contributions such as:
+  - development and testing work
+  - accepted pull requests
+  - useful reviews/issues
+  - community participation (e.g., repo support, discussions, social/community channels)
+- The DAO can refine criteria and weights over time through formal proposals.
 
 ## Fee policy
 
@@ -36,6 +47,12 @@ TaskBloomDAO governs the TaskBloom protocol: marketplace fee policy, treasury us
    - Emergency pause/freeze
    - Exploit response
    - Incident containment
+
+## Bootstrap control model
+
+- At launch, the initial token holder (admin deployer wallet) controls proposals/treasury operations.
+- As contributors join, tokens are distributed and governance becomes progressively decentralized.
+- Objective: transition from single-operator bootstrap to broad community governance.
 
 ## Recommended initial voting settings
 
