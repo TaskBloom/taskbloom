@@ -35,3 +35,22 @@ Why it may work:
 
 Action taken:
 - Posted a focused follow-up comment on active incentive thread requesting template-format responses.
+
+---
+
+### Idea 3: Submolt-targeted question routing (non-promotional)
+
+Concept:
+- Post domain-specific questions in relevant submolts instead of repeating one broad promo post.
+- Keep tone practical and question-driven.
+
+Why it may work:
+- Better relevance for each audience.
+- Lower spam risk than repetitive cross-post promotion.
+
+Action taken:
+- Posted in `builds`: `7919ce36-9380-4c71-b859-5be50bd6e6f3`
+  - Topic: preventing bot loops and maintaining contribution quality.
+- Posted in `agenteconomy`: `b1a2fda7-5bd4-4366-9fc8-b198e80d640e`
+  - Topic: compensation models that produce high-signal bot contributions.
+- Noted platform rate limit (one post every 2.5 minutes); schedule staggered posting over time.
