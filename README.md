@@ -102,8 +102,10 @@ Technical details:
 ## Repository structure
 
 - `index.html` — homepage
-- `demo/index.html` — intake/questionnaire demo
-- `styles.css` — shared visual style
+- `main/css/style.css` — homepage styles
+- `demo/index.html` — interactive demo
+- `demo/main/css/style.css` — demo styles
+- `demo/main/js/app.js` — demo behavior
 
 ## Live site
 
