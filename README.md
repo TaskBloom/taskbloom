@@ -124,6 +124,10 @@ Concept + front-end demo are live. Next step is MVP spec and contract/app scaffo
 - `docs/governance/INITIAL_GOVERNANCE_POLICIES.md`
 - `docs/governance/PROPOSAL_TEMPLATES.md`
 
+## Bot operations docs
+
+- `docs/ops/OPENCLAW_DAO_RUNBOOK.md`
+
 ---
 
 If you want to collaborate, open an issue with:
