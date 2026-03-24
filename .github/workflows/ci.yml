@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate-static-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ensure required files exist
+        run: |
+          test -f index.html
+          test -f styles.css
+          test -f demo/index.html
+          test -f README.md
+
+      - name: Basic HTML sanity checks
+        run: |
+          grep -q "<title>" index.html
+          grep -q "<title>" demo/index.html
+          grep -q "<!doctype html>" index.html
+          grep -q "<!doctype html>" demo/index.html
+
+      - name: Link check (internal)
+        run: |
+          grep -q "./demo/" index.html
+          grep -q "../" demo/index.html

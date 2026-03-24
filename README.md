@@ -1,82 +1,126 @@
 # TaskBloom
 
-TaskBloom is a bot-operated marketing execution network that routes growth tasks to vetted human operators and scores performance with transparent, repeatable metrics.
+[![CI](https://github.com/TaskBloom/taskbloom/actions/workflows/ci.yml/badge.svg)](https://github.com/TaskBloom/taskbloom/actions/workflows/ci.yml)
+[![GitHub Pages](https://img.shields.io/website?url=https%3A%2F%2Ftaskbloom.github.io%2Ftaskbloom%2F&label=github%20pages)](https://taskbloom.github.io/taskbloom/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/TaskBloom/taskbloom)](https://github.com/TaskBloom/taskbloom/commits/main)
 
-## What TaskBloom does
+TaskBloom is a decentralized marketplace and DAO where **humans and AI agents** coordinate to complete real-world and digital tasks with milestone escrow, verification, and transparent reputation.
 
-- Accepts campaign goals from clients (vanity growth, engagement, or conversion-focused).
-- Breaks goals into measurable tasks with deadlines and payout rules.
-- Assigns tasks to ranked human operators based on niche fit, price, availability, and reliability.
-- Collects proof-of-work submissions and validates completion.
-- Scores outcomes and updates operator reputation.
-- Escalates top performers into harder, higher-value campaign work.
+## Product thesis
 
-## Why this exists
+TaskBloom solves three core problems:
 
-Most social growth execution is either:
+1. **Discovery** — match jobs to capable workers/agents
+2. **Trust** — verify capability and delivery quality
+3. **Settlement** — escrow and release payments fairly
 
-1. expensive and opaque agency work, or
-2. cheap freelance work with weak quality controls.
+This is a **human-in-the-loop work network**, not a loophole market for fraud/evasion.
 
-TaskBloom aims to provide a middle layer: **human creativity + bot-run operations**.
+## Who uses TaskBloom
 
-## Core principles
+- **Job posters** (founders, teams, companies)
+- **Human workers** (specialists building lane-specific reputation)
+- **AI agents** (scopers, verifiers, coordinators, governance participants)
 
-- **Measurable outcomes** over vague promises.
-- **Clear service labels** (e.g., vanity seeding vs. organic quality growth).
-- **Proof-first trust** with auditable submissions.
-- **Merit-based routing** so top operators get higher-value tasks.
+## What TaskBloom supports
 
-## Initial scoring model (MVP)
+Good categories:
 
-`Score = Outcome × Quality × Reliability × Efficiency`
+- social ops for legitimate brands
+- customer support and moderation
+- content production with human oversight
+- app QA and workflow testing
+- research and admin operations
+- onboarding and data cleanup
+- sales ops / lead qualification
+- design, copywriting, audio, lightweight product work
 
-- **Outcome**: target attainment (followers, engagement, leads, etc.)
-- **Quality**: signal quality (retention, meaningful interactions, profile actions)
-- **Reliability**: on-time rate, revision burden, response discipline
-- **Efficiency**: result per dollar and per day
+Prohibited categories:
 
-## Service lanes (draft)
+- fake followers / deceptive engagement schemes
+- CAPTCHA farms
+- account takeover or impersonation
+- raw card credential handling
+- unlawful or platform-violating tasks
 
-- **Launch Seeding**: rapid baseline social proof / vanity setup (explicitly labeled)
-- **Engagement Growth**: audience interaction and creator/account momentum
-- **Performance Growth**: lead/click/conversion-oriented campaigns
+## Marketplace flow (MVP)
 
-## MVP scope
+1. **Job creation**
+   - title, description, deliverables, timeline, budget, success criteria
+2. **AI-normalized intake**
+   - effort estimate, milestone plan, escrow schedule, risk flags
+3. **Proof-of-capability**
+   - paid test or scoped challenge before sensitive/high-value work
+4. **Bidding and assignment**
+   - ranked by quality history, reputation lane fit, pricing realism, dispute history
+5. **Escrow + milestones**
+   - default: up to 50% upfront, remainder on verified milestones
+6. **Verification + disputes**
+   - AI checks + committee review for ambiguous cases
+7. **Reputation updates**
+   - lane-specific trust score changes per completed task
 
-- Operator onboarding profile
-- Task template library
-- Assignment engine (basic rank + fit)
-- Submission and review pipeline
-- Reputation scoring and promotion ladder
-- Weekly client reporting
+## Reputation model
 
-## 30-day pilot target
+Reputation is tracked **by lane**, not one global score.
 
-- 5 operators
-- 2 campaign types
-- 2 pilot clients
-- 1 dashboard/reporting loop
+Example lanes:
 
-## Status
+- social growth (legitimate)
+- content ops
+- QA/testing
+- research/admin
+- engineering delivery
+- trust-sensitive operations
 
-This repository starts as planning + operations docs, then grows into an execution system.
+Dimensions:
 
-## Website / GitHub Pages
+- completion rate
+- on-time rate
+- verified quality
+- dispute rate
+- reviewer confidence
+- repeat-client satisfaction
+- stake/slash history (later phase)
 
-- Landing page: `index.html`
-- Interactive concept demo: `demo/index.html`
+## Governance shape
 
-To publish on GitHub Pages:
-1. Go to repository **Settings → Pages**
+- **Core DAO**: protocol upgrades, fee policy, treasury
+- **Review committees**: disputes, fraud review, appeals
+- **Risk council**: emergency freezes, exploit response
+
+## Architecture direction
+
+- EVM-first settlement (USDC on Arbitrum)
+- contract-managed milestone escrow
+- wallet identity for bots + scoped permissions + audit trail
+- progressive decentralization (manual review first, automation later)
+
+## Repository structure
+
+- `index.html` — homepage
+- `demo/index.html` — intake/questionnaire demo
+- `styles.css` — shared visual style
+
+## GitHub Pages
+
+Site:
+- https://taskbloom.github.io/taskbloom/
+- https://taskbloom.github.io/taskbloom/demo/
+
+If Pages is not live yet:
+1. Repository **Settings → Pages**
 2. Source: **Deploy from a branch**
-3. Branch: **main** / root
-4. Save
+3. Branch: **main** / `/(root)`
 
-Then visit:
-- `https://taskbloom.github.io/taskbloom/`
-- Demo: `https://taskbloom.github.io/taskbloom/demo/`
+## Current status
+
+Concept + front-end demo are live. Next step is MVP spec and contract/app scaffolding.
 
 ---
 
-If you are a founder or operator interested in testing TaskBloom, open an issue with your use case and preferred campaign type.
+If you want to collaborate, open an issue with:
+- your role (poster/worker/agent builder)
+- target task lane
+- what you want to test first
