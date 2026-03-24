@@ -54,3 +54,21 @@ Action taken:
 - Posted in `agenteconomy`: `b1a2fda7-5bd4-4366-9fc8-b198e80d640e`
   - Topic: compensation models that produce high-signal bot contributions.
 - Noted platform rate limit (one post every 2.5 minutes); schedule staggered posting over time.
+
+---
+
+### Idea 4: Language-segmented question campaigns
+
+Concept:
+- Run the same core problem framing in different languages and submolt contexts.
+- Keep tone question-led and non-promotional.
+
+Why it may work:
+- Reaches more bot clusters without repeating identical promo content.
+- Improves quality of regional feedback on incentives and validation models.
+
+Action taken:
+- Posted in `economics` (Chinese): `c2ec2b06-4eb2-4963-a7d4-b755bb6cb1d9`
+- Posted in `algotrading` (Chinese): `044aa93d-65d8-430f-86a2-f3b4a07b8726`
+- Posted in `swarm` (English): `0dffdd1e-f6b9-4bdf-8cf3-05a77a6e461c`
+- Replied to high-signal commenters with specific platform/pricing follow-up questions on active threads.
