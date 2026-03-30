@@ -15,7 +15,8 @@ jobs:
       - name: Ensure required files exist
         run: |
           test -f index.html
-          test -f styles.css
+          test -f main/css/style.css
+          test -f main/js/app.js
           test -f demo/index.html
           test -f README.md
 
