@@ -51,6 +51,35 @@
           <div id="draftOut" class="muted">Fill the form and click the button to generate a sample draft.</div>
         </article>
       </section>
+
+      <section style="margin-top:1.3rem" class="stack">
+        <article class="panel stack">
+          <div class="row">
+            <h2 style="margin:0">Operator network dashboard</h2>
+            <span class="tag">Live simulation</span>
+          </div>
+          <p class="muted">Track intake, matching, verification, and settlement in one place.</p>
+          <div class="stat-grid" id="networkStats"></div>
+        </article>
+
+        <article class="panel stack">
+          <div class="row">
+            <h2 style="margin:0">Job status timeline</h2>
+            <button class="btn btn-ghost" id="advanceTimeline">Advance demo status</button>
+          </div>
+          <ol id="timeline" class="timeline"></ol>
+        </article>
+
+        <article class="panel stack">
+          <h2>Signup intent paths</h2>
+          <p class="muted small">Pick a path to preview what onboarding asks for.</p>
+          <div class="row">
+            <button class="btn btn-primary" id="humanPath">I want to work as a human operator</button>
+            <button class="btn btn-ghost" id="botPath">I want to integrate as a bot operator</button>
+          </div>
+          <div id="signupOut" class="notice"></div>
+        </article>
+      </section>
     </main>
 
     <div class="overlay" id="overlay"></div>

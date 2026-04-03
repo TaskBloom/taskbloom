@@ -175,6 +175,71 @@ els.jobs.addEventListener('click', (e) => {
 els.overlay.addEventListener('click', closeDrawer);
 els.closeDrawer.addEventListener('click', closeDrawer);
 
+const timelineSteps = [
+  { key: 'intake', label: 'Client intake accepted', detail: 'Goal, budget, and timeline validated by intake policy bot.' },
+  { key: 'matching', label: 'Operator matching complete', detail: 'Bot routes to a qualified human + QA reviewer pair.' },
+  { key: 'execution', label: 'Execution sprint in progress', detail: 'Operators deliver milestones with daily check-ins.' },
+  { key: 'verification', label: 'Verification pass', detail: 'Evidence links and output quality checks approved.' },
+  { key: 'settlement', label: 'Settlement released', detail: 'Milestone escrow unlocks payout and fee accounting.' }
+];
+
+let timelineIndex = 1;
+
+function renderNetworkStats() {
+  const statsEl = document.getElementById('networkStats');
+  if (!statsEl) return;
+
+  const stats = [
+    { label: 'Open jobs', value: jobs.length },
+    { label: 'Verified operators', value: 18 },
+    { label: 'Bot operators', value: 7 },
+    { label: 'Escrow active', value: '$12,400' }
+  ];
+
+  statsEl.innerHTML = stats
+    .map((s) => `<div class="stat-card"><div class="muted small">${s.label}</div><div class="value">${s.value}</div></div>`)
+    .join('');
+}
+
+function renderTimeline() {
+  const timelineEl = document.getElementById('timeline');
+  if (!timelineEl) return;
+
+  timelineEl.innerHTML = timelineSteps
+    .map((step, idx) => {
+      const state = idx <= timelineIndex ? 'done' : 'pending';
+      const marker = idx <= timelineIndex ? '✅' : '⏳';
+      return `<li class="${state}"><strong>${marker} ${step.label}</strong><div class="small">${step.detail}</div></li>`;
+    })
+    .join('');
+}
+
+function setSignupPreview(kind) {
+  const out = document.getElementById('signupOut');
+  if (!out) return;
+
+  if (kind === 'human') {
+    out.innerHTML = `
+      <strong>Human operator path</strong>
+      <ul>
+        <li>Pick service categories and upload 2 evidence samples.</li>
+        <li>Pass a short quality challenge in your chosen lane.</li>
+        <li>Receive a reputation score and become eligible for routed jobs.</li>
+      </ul>
+    `;
+    return;
+  }
+
+  out.innerHTML = `
+    <strong>Bot operator path</strong>
+    <ul>
+      <li>Register endpoint + capability manifest.</li>
+      <li>Define safety guardrails and escalation rules.</li>
+      <li>Run sandbox test jobs before production admission.</li>
+    </ul>
+  `;
+}
+
 els.simulatePost?.addEventListener('click', () => {
   const title = document.getElementById('pTitle')?.value || 'Untitled job';
   const desc = document.getElementById('pDesc')?.value || 'No description provided';
@@ -183,7 +248,21 @@ els.simulatePost?.addEventListener('click', () => {
   const category = document.getElementById('pCategory')?.value || 'Marketing Ops';
 
   els.draftOut.textContent = `Draft created: "${title}" (${category}) · $${budget} · ${days} days. First milestone deposit simulated. Objective: ${desc}`;
+
+  timelineIndex = 0;
+  renderTimeline();
 });
+
+document.getElementById('advanceTimeline')?.addEventListener('click', () => {
+  timelineIndex = (timelineIndex + 1) % timelineSteps.length;
+  renderTimeline();
+});
+
+document.getElementById('humanPath')?.addEventListener('click', () => setSignupPreview('human'));
+document.getElementById('botPath')?.addEventListener('click', () => setSignupPreview('bot'));
 
 renderJobs();
 renderProfileBadge();
+renderNetworkStats();
+renderTimeline();
+setSignupPreview('human');

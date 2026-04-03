@@ -148,6 +148,35 @@ textarea { min-height: 110px; resize: vertical; }
   border-color: #2f5f52;
 }
 
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: .7rem;
+}
+.stat-card {
+  background: rgba(255,255,255,.02);
+  border: 1px solid #2b3d62;
+  border-radius: 12px;
+  padding: .65rem .75rem;
+}
+.stat-card .value {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.timeline {
+  margin: .4rem 0 0;
+  padding-left: 1.2rem;
+}
+.timeline li {
+  margin: .55rem 0;
+}
+.timeline li.done {
+  color: #66e3b3;
+}
+.timeline li.pending {
+  color: var(--muted);
+}
+
 @media (max-width: 640px) {
   .nav { gap: .8rem; flex-wrap: wrap; }
 }
