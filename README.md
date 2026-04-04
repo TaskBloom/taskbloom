@@ -125,7 +125,14 @@ Technical details:
 
 ## Current status
 
-Concept + front-end demo are live. Next step is MVP spec and contract/app scaffolding.
+Concept + front-end demo are live. MVP specs and contract/app scaffolding are in active buildout.
+
+### Status update (2026-04-04)
+
+- Resolved governance documentation gap for migration tracking by adding a living migration status tracker and explicit initial voting parameters in `docs/governance/ADMIN_TO_TOKEN_VOTING_MIGRATION.md`.
+- Resolved governance proposal standardization gap by adding mandatory treasury proposal evidence/risk checks and a reusable checklist in `docs/governance/PROPOSAL_TEMPLATES.md`.
+
+> Governance note: TaskBloom governance and treasury operations are still experimental, being tested in public, and evolving through iteration. External critical review and audit-style feedback are encouraged.
 
 ## Governance docs
 

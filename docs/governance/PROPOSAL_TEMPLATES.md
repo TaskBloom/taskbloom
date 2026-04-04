@@ -85,3 +85,23 @@ Success criteria:
 Naming rule:
 - Title must include the exact onchain intent and target value.
 - Avoid ambiguous wording.
+
+
+## Required checks for treasury-affecting proposals
+
+Treasury-affecting proposals (distribution rounds, treasury spend, fee updates that impact treasury flow) must include all of the following before being considered valid:
+
+- Evidence links (PRs, issues, reports, dashboards)
+- Explicit risk notes (operational + financial)
+- Mitigation plan for the identified risks
+- Rollback/containment plan when applicable
+- Named accountable operator for post-execution reporting
+
+### Treasury proposal checklist (copy/paste)
+
+- [ ] Objective is explicit and measurable
+- [ ] Amount and recipient details are complete
+- [ ] Evidence links are attached
+- [ ] Risk notes and mitigations are attached
+- [ ] Reporting timeline and owner are defined
+- [ ] Emergency/rollback path is documented

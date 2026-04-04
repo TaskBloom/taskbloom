@@ -17,6 +17,27 @@ The target is a controlled move into token voting with clear rules, staged permi
 - Keep emergency controls during early voting phase.
 - Avoid irreversible governance changes without dry-run review.
 
+
+
+## Migration status tracker (living section)
+
+Use this section to track execution status transparently.
+
+- [x] Bootstrap hardening started
+- [x] Governance policy docs published in repo
+- [ ] Canonical address registry finalized in repo
+- [ ] Token Voting plugin installed
+- [ ] First low-risk test proposal executed through Token Voting
+- [ ] Treasury-critical permissions transferred to Token Voting
+- [ ] Admin reduced to bounded emergency-only role (or removed)
+
+### Current target parameters (initial)
+
+- Proposal duration: **3 days**
+- Support threshold: **55%**
+- Minimum participation: **15%**
+- Minimum proposer power: **1 TBLOOM**
+
 ## Phase 0: Bootstrap hardening (now)
 
 1. Keep Admin as active executor.
