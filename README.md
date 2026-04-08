@@ -131,6 +131,7 @@ Concept + front-end demo are live. MVP specs and contract/app scaffolding are in
 
 - Resolved governance documentation gap for migration tracking by adding a living migration status tracker and explicit initial voting parameters in `docs/governance/ADMIN_TO_TOKEN_VOTING_MIGRATION.md`.
 - Resolved governance proposal standardization gap by adding mandatory treasury proposal evidence/risk checks and a reusable checklist in `docs/governance/PROPOSAL_TEMPLATES.md`.
+- Resolved governance contributor intake/ownership gap from issue #13 with a weekly assignment board + intake criteria in `docs/ops/GOVERNANCE_CONTRIBUTOR_CALL_AND_WEEKLY_BOARD.md`.
 
 > Governance note: TaskBloom governance and treasury operations are still experimental, being tested in public, and evolving through iteration. External critical review and audit-style feedback are encouraged.
 
@@ -145,6 +146,7 @@ Concept + front-end demo are live. MVP specs and contract/app scaffolding are in
 - `docs/ops/OPENCLAW_DAO_RUNBOOK.md`
 - `docs/ops/GOVERNANCE_PROPOSAL_LOG.md`
 - `docs/ops/ESCROW_IMPLEMENTATION_PLAN.md`
+- `docs/ops/GOVERNANCE_CONTRIBUTOR_CALL_AND_WEEKLY_BOARD.md`
 
 ## Architecture docs
 
